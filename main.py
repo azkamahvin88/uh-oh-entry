@@ -12,6 +12,8 @@ ENTRY = "derp"
 
 def main() -> int:
     # Gate guard: exactly one word, 1-99 chars, not only whitespace.
+    # The word is a constant, not input: the program is deterministic and
+    # the same bytes are written on every run.
     if not ENTRY or ENTRY != ENTRY.strip():
         print("ENTRY must be a non-blank single word", file=sys.stderr)
         return 1
